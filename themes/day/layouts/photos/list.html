@@ -1,0 +1,90 @@
+{{ define "title" -}}
+{{ .Title | title }}
+{{- end }}
+{{ define "main" -}}
+
+{{ with .Params.background_image }}
+	<style>
+		body{
+			background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{{.}}");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
+{{ end }}
+
+
+
+<div>
+	{{ .Content }}
+</div>
+{{ $Sections := where .Pages "IsSection" true }}
+{{ $Images := where .Pages "IsSection" false }}
+
+{{/* Recursion with 3 levels */}}
+{{- range $Sections }}
+	{{- range .Pages  }}
+		{{ if .IsSection}}
+			{{- range .Pages  }}{{ if .IsSection}}
+				{{- range .Pages  }}{{ if .IsSection}}
+				{{else}}{{ $Images = $Images | append . }}{{ end }}{{- end }}
+			{{else}}{{ $Images = $Images | append . }}{{ end }}{{- end }}
+		{{else}}
+			{{ $Images = $Images | append . }}
+		{{ end }}
+	{{- end }}
+{{- end }}
+
+{{$Images = $Images.ByDate.Reverse}}
+
+{{ with $Sections }}
+<div class="category-list grid">
+	{{- range $Sections }}
+	<a class="category" href="{{ .RelPermalink }}">
+		{{- range collections.First 1 .Pages.ByDate }}
+		{{$path_to_image := print .RelPermalink "../"}}
+		{{$featured_image :=  .Params.featured_image}}
+		{{ if eq (printf "%T" $featured_image) "string"}}{{else}}		
+			{{$featured_image = index $featured_image 0 }}
+		{{ end }}
+		{{$path_to_image = print $path_to_image $featured_image}}
+		{{ if .IsSection  }}
+			{{ range .Pages.ByDate.Reverse}}
+				{{$path_to_image = print .RelPermalink "../"}}
+				{{$featured_image :=  .Params.featured_image}}
+				{{ if eq (printf "%T" $featured_image) "string"}}{{else}}		
+					{{$featured_image = index $featured_image 0 }}
+				{{ end }}
+				{{$path_to_image = print $path_to_image $featured_image}}
+			{{end}}
+		{{ end }}
+
+
+		<div class="ratio ratio-1x1 ">
+			<img class="object-fit-cover  " src="{{$path_to_image}}" alt="">
+		</div>
+		{{- end}}
+		<span>{{ .Title }}</span>
+	</a>
+	{{- end }}
+</div>
+{{ end }}
+
+<div class="preview-picture-grid grid" style="--bs-gap:0;">
+	{{- range $Images }}
+	<div class="g-col-4 ratio ratio-1x1 preview-picture">
+		<a href="{{ .RelPermalink }}">
+			{{$featured_image := .Params.featured_image}}
+
+			{{ if eq (printf "%T" $featured_image) "string"}}
+			
+			{{else}}		
+				{{$featured_image = index $featured_image 0 }}
+
+			{{ end }}
+			<img class="w-100 h-100 object-fit-cover" src="{{ .RelPermalink }}../{{$featured_image}}" alt="">
+		</a>
+	</div>
+	{{- end }}
+</div>
+{{- end }}

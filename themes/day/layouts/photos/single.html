@@ -1,0 +1,33 @@
+
+{{ define "title" -}}
+{{ .Title | title }}
+{{- end }}
+{{ define "main" -}}
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <div id="comment-section"></div>
+  <script>
+  initComments({
+    node: document.getElementById("comment-section"),
+    defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
+    serverName: "cactus.chat",
+    siteName: "daytheipc-com",
+    commentSectionId: "{{ .RelPermalink }}"
+  })
+  </script>
+
+  {{ .Content }}
+
+  <div class="images"> 
+    {{ if eq (printf "%T" .Params.featured_image) "string"}}
+      <img class="" src="{{ .RelPermalink }}../{{.Params.featured_image}}" alt="">
+    {{else}}		
+      {{$RelPermalinkTemp := .RelPermalink}}
+      {{ range .Params.featured_image }}
+        <img class="" src="{{ $RelPermalinkTemp }}../{{ . }}" alt="">
+        
+      {{ end }}
+    {{ end }}
+  </div>
+
+{{- end }}

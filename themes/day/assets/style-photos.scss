@@ -1,0 +1,136 @@
+
+$enable-grid-classes: false;
+$enable-cssgrid: true;
+
+
+@import "../../../submodules/bootstrap/scss/functions";
+@import "../../../submodules/bootstrap/scss/variables";
+@import "../../../submodules/bootstrap/scss/variables-dark";
+@import "../../../submodules/bootstrap/scss/maps";
+@import "../../../submodules/bootstrap/scss/mixins";
+@import "../../../submodules/bootstrap/scss/utilities";
+//@import "../../../submodules/bootstrap/scss/root";
+@import "../../../submodules/bootstrap/scss/reboot";
+//@import "../../../submodules/bootstrap/scss/type";
+//@import "../../../submodules/bootstrap/scss/images";
+@import "../../../submodules/bootstrap/scss/containers";
+@import "../../../submodules/bootstrap/scss/grid";
+//@import "../../../submodules/bootstrap/scss/tables";
+//@import "../../../submodules/bootstrap/scss/forms";
+//@import "../../../submodules/bootstrap/scss/buttons";
+//@import "../../../submodules/bootstrap/scss/transitions";
+//@import "../../../submodules/bootstrap/scss/dropdown";
+//@import "../../../submodules/bootstrap/scss/button-group";
+//@import "../../../submodules/bootstrap/scss/nav";
+//@import "../../../submodules/bootstrap/scss/navbar";
+//@import "../../../submodules/bootstrap/scss/card";
+//@import "../../../submodules/bootstrap/scss/accordion";
+//@import "../../../submodules/bootstrap/scss/breadcrumb";
+//@import "../../../submodules/bootstrap/scss/pagination";
+//@import "../../../submodules/bootstrap/scss/badge";
+//@import "../../../submodules/bootstrap/scss/alert";
+//@import "../../../submodules/bootstrap/scss/progress";
+//@import "../../../submodules/bootstrap/scss/list-group";
+//@import "../../../submodules/bootstrap/scss/close";
+//@import "../../../submodules/bootstrap/scss/toasts";
+//@import "../../../submodules/bootstrap/scss/modal";
+//@import "../../../submodules/bootstrap/scss/tooltip";
+//@import "../../../submodules/bootstrap/scss/popover";
+//@import "../../../submodules/bootstrap/scss/carousel";
+//@import "../../../submodules/bootstrap/scss/spinners";
+//@import "../../../submodules/bootstrap/scss/offcanvas";
+//@import "../../../submodules/bootstrap/scss/placeholders";
+@import "../../../submodules/bootstrap/scss/helpers";
+@import "../../../submodules/bootstrap/scss/utilities/api";
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+.lilita-one-regular {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+.roboto-mono {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@keyframes pulse {
+    0%{
+        border-color: #42235d;
+    }
+    50%{
+        border-color: #733fa0;
+    }
+    100%{
+        border-color: #42235d;
+    }
+}
+
+@keyframes normal_to_dark {
+    0%{
+        filter: brightness(100%);
+    }
+    100%{
+        filter: brightness(50%);
+    }
+}
+
+
+
+
+html, body{min-height:100%;}
+
+body{
+    background-color: black;
+}
+
+main{
+    @extend .roboto-mono;
+    color: white;
+    background-color: black;
+    padding: 20px;
+}
+
+.category-list{
+    margin: 0 1.5vw;
+    padding-bottom: 2vw;
+    border-bottom: #733fa0 0.3vw solid;
+    border-radius: 0 0 2ch 2ch;
+    padding: 2vw ;
+
+    .category{
+        display: flex;
+        flex-direction: column;
+        width: 10vw;
+        img{
+            border-radius: 50%;
+            border-width: 0.4vw;
+            animation: pulse 5s ease infinite;
+            border-style: solid;
+            padding: 0.2vw;
+        }
+        img:hover{
+            animation: normal_to_dark 0.2s;
+            filter: brightness(50%);
+        }
+        span{
+            font-size: 2vw;
+            display: table-cell;
+            vertical-align: bottom;
+            text-align: center;
+        }
+    }
+}
+
+.preview-picture-grid{
+    margin: 20px; 
+}
+.preview-picture {
+    border: 0.3rem black solid;
+}

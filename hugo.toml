@@ -1,0 +1,4 @@
+baseURL = 'https://moon.daytheipc.com/'
+languageCode = 'en-us'
+title = "Daniela's Dungeon"
+theme = 'day'
