@@ -1,9 +1,6 @@
 [submodule "bootstrap"]
-	path = submodules/bootstrap
+	path = themes/day/assets/submodules/bootstrap
 	url = https://github.com/twbs/bootstrap
 [submodule "bootstrap-icons"]
-	path = submodules/bootstrap-icons
+	path = themes/day/assets/submodules/bootstrap-icons
 	url = https://github.com/twbs/icons
-[submodule "htmx"]
-	path = submodules/htmx
-	url = https://github.com/bigskysoftware/htmx.git
