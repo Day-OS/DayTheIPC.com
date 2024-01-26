@@ -1,1 +1,26 @@
-aa
+<div class="left">
+    {{with .Page.Parent}}
+        <a href="{{.RelPermalink}}"><img class="back-button" height="31px" src="/arrowlef.gif" alt=""></a>
+    {{end}}
+</div>
+<div class="middle">
+    {{if eq .license "WTFPL"}}
+    <a href="http://www.wtfpl.net/">
+        <img src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-1.png" width="88" height="31" alt="WTFPL"/></img>
+    </a>
+    {{else}}
+    <abbr title="This work by Daniela Paladino is licensed under CC BY 4.0">
+        <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
+            <img width="88px" height="31px" src="/by.png" alt="">
+        </a>
+    </abbr>
+    {{end}}
+</div>
+<div class="right">
+    <a href="{{ print .Site.Params.onionBaseURL ( print "/.." .Page.RelPermalink)}}">
+        <img src="/onion-button.png" alt="Access this Page through Tor">
+    </a>
+    <a href="/index.xml">
+        <img src="/feed.gif" style="height: 31px;" alt="RSS Feed" title="Subscribe via RSS for updates."></img>
+    </a>
+</div>

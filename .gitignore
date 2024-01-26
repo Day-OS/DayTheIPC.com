@@ -2,6 +2,7 @@
 /public/
 /resources/_gen/
 /content/
+!/content/nerd-stuff/comparisons/
 /assets/jsconfig.json
 hugo_stats.json
 

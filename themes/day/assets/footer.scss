@@ -1,0 +1,56 @@
+@import "variables";
+
+html,body{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    
+    main{
+        flex: 1 0 auto;
+    }
+    footer{
+        flex-shrink: 0;
+    }
+}
+
+.back-button{
+    background-color: $gray-900;
+    border: 2px solid $secondary;
+    padding: 2px;
+}
+
+footer{
+    margin-top: 20px;
+    padding: 10px 20px ;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(19, 19, 19);
+    .left{
+        flex: 1;
+        margin: auto;
+        height: 40px; 
+        padding-left: 10px;
+        border-right: 28px solid transparent;
+        border-bottom: 30px solid $secondary;
+    }
+    .middle{
+        display: flex;
+        justify-content: center;
+        flex: 1;
+    }
+    .right{
+        
+        height: 40px; 
+        padding-right: 10px;
+        border-left: 28px solid transparent;
+        border-bottom: 30px solid $secondary;
+        align-items: start;
+        
+        display: flex;
+        justify-content: end;
+        flex: 1;
+    }
+
+}

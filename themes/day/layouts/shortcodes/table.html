@@ -1,0 +1,30 @@
+{{ $htmlTable := .Inner | markdownify }}
+{{ $class := .Get 0 }}
+{{ $htmlTable := replace $htmlTable "<table>" (printf "<table class=\"%s\">" $class) }}
+{{ $classList := ".green-bg|.yellow-bg|.purple-bg|.red-bg"}}
+
+{{$table := slice}}
+{{range (split $htmlTable "\n")}}
+  {{$line := .}}
+  {{/* Filter for <td> only */}}
+  {{ if (hasPrefix . "<td") }}
+    
+    {{/* Filter <td> that contains any class written in them */}}
+    
+    {{ with (index (findRE $classList . 1) 0) }}
+      {{/* adds the necessary class to it */}}
+      {{ $classWithoutDot := (replaceRE "^." "" .)}}
+      {{ $line = replace $line . "" }}
+
+      {{ $line = printf (replaceRE "<td(.*)>(.*)</td>" "<td $1 class=\"%s\">$2</td>" $line) $classWithoutDot }}
+
+      {{$classes := delimit . " "}}
+      {{/*replaceRE "class=\".*\"" "" .*/}}
+      {{/*.*/}}
+    {{end}}
+  {{ end }}
+  {{$table = $table | append $line }}
+{{end}}
+
+{{ delimit $table "\n" | safeHTML }}
+
