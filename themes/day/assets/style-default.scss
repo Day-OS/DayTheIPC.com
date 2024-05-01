@@ -1,0 +1,137 @@
+
+$enable-grid-classes: false;
+$enable-cssgrid: true;
+
+$media-small: "screen and (max-width : 768px)";
+
+@import "footer";
+@import "variables";
+@import "submodules/bootstrap/scss/variables-dark";
+@import "submodules/bootstrap/scss/maps";
+@import "submodules/bootstrap/scss/mixins";
+@import "submodules/bootstrap/scss/utilities";
+@import "submodules/bootstrap/scss/root";
+@import "submodules/bootstrap/scss/reboot";
+//@import "submodules/bootstrap/scss/type";
+//@import "submodules/bootstrap/scss/images";
+//@import "submodules/bootstrap/scss/containers";
+//@import "submodules/bootstrap/scss/grid";
+//@import "submodules/bootstrap/scss/tables";
+//@import "submodules/bootstrap/scss/forms";
+//@import "submodules/bootstrap/scss/buttons";
+//@import "submodules/bootstrap/scss/transitions";
+//@import "submodules/bootstrap/scss/dropdown";
+//@import "submodules/bootstrap/scss/button-group";
+//@import "submodules/bootstrap/scss/nav";
+//@import "submodules/bootstrap/scss/navbar";
+//@import "submodules/bootstrap/scss/card";
+//@import "submodules/bootstrap/scss/accordion";
+//@import "submodules/bootstrap/scss/breadcrumb";
+//@import "submodules/bootstrap/scss/pagination";
+//@import "submodules/bootstrap/scss/badge";
+@import "submodules/bootstrap/scss/alert";
+//@import "submodules/bootstrap/scss/progress";
+//@import "submodules/bootstrap/scss/list-group";
+//@import "submodules/bootstrap/scss/close";
+//@import "submodules/bootstrap/scss/toasts";
+//@import "submodules/bootstrap/scss/modal";
+//@import "submodules/bootstrap/scss/tooltip";
+//@import "submodules/bootstrap/scss/popover";
+//@import "submodules/bootstrap/scss/carousel";
+//@import "submodules/bootstrap/scss/spinners";
+//@import "submodules/bootstrap/scss/offcanvas";
+//@import "submodules/bootstrap/scss/placeholders";
+//@import "submodules/bootstrap/scss/helpers";
+//@import "submodules/bootstrap/scss/utilities/api";
+
+
+@import 'fonts/Roboto_Mono/font.scss';
+.roboto-mono {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@import 'fonts/Silkscreen/font.scss';
+.silkscreen-regular {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.no-button{
+    
+    div{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items:center;
+        justify-content: center;
+    }
+    img{
+        margin: 5px;
+        width: 16px;
+        height: 16px;
+    }
+    @extend .silkscreen-regular
+}
+.webring a{
+    text-decoration: none;
+}
+
+body{
+    background-color: $gray-900;
+}
+
+main {
+    margin: 10px 80px;
+    font-family: 'Courier New', monospace;
+    color: #e8eaed;
+    text-align: justify;
+    word-break: break-word;
+}
+
+
+table {
+    width: 100%;  
+    td {
+        border: 2px solid $gray-800;
+        word-break: normal;
+        .purple , a {
+            color: $purple-300;
+        }
+
+    
+    }
+
+    .purple-bg {
+        background-color: $purple-300;
+        font-weight: bold;
+    }
+
+    .red-bg {
+        background-color: $pink;
+    }
+
+    .green-bg {
+        background-color: $teal;
+    }
+
+    .yellow-bg {
+        background-color: $yellow;
+    }
+
+    .purple-bg ,
+    .red-bg ,
+    .yellow-bg ,
+    .green-bg {
+        color: #202124;
+    }
+    abbr{
+        color:$teal;
+    }
+    
+}
+
+

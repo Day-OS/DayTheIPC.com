@@ -1,4 +1,5 @@
 @import "variables";
+@import "fonts/Silkscreen";
 
 html,body{
     height: 100%;
@@ -22,11 +23,21 @@ body{
 }
 
 footer{
+    position: relative;
+    display: block;
+    bottom: 0;
     margin-top: 20px;
-    padding: 10px 20px ;
-    display: flex;
-    justify-content: space-between;
+    padding: 10px 20px;
     background-color: rgb(19, 19, 19);
+    .extra{
+        text-align: center;
+        font-family: "Silkscreen";
+        color: white;
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+    }
     .left{
         flex: 1;
         margin: auto;

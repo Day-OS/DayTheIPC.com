@@ -4,7 +4,9 @@
 	<title>{{ if not .IsHome }}{{ .Title | title }} | {{ end }}{{ .Site.Title }}</title>
 	<link rel="canonical" href="{{ .Site.BaseURL }}">
 	<link rel='alternate' type='application/rss+xml' title="{{ .Site.Title }} RSS" href='/index.xml'>
-	<link rel='stylesheet' type='text/css' href='/style.css'>
+	{{ $sass := resources.Get "style-crt.scss" }}
+	{{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 	{{ with .Site.Params.favicon }}<link rel="icon" href="{{ . }}">
 	{{ end -}}
 	<meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}">
@@ -17,14 +19,26 @@
 <body>
 {{ if .Site.Menus.main }}{{ partial "nav.html" . }}{{ end -}}
 <main>
-<header><h1 id="tag_{{ .Title }}">{{ block "title" . }}{{ end }}</h1></header>
-<article>
-{{ block "main" . }}
-{{ .Content }}
-{{ end }}
-{{ if .Param "nextprev" }}{{ partial "nextprev.html" . -}}{{ end -}}
-{{ if .Param "taglist" }}{{ partial "taglist.html" . }}{{ end -}}
-</article>
+	
+	<div class="content">
+		<header><h1 id="tag_{{ .Title }}">{{ block "title" . }}{{ end }}</h1></header>
+		<article>
+			<h2 style="text-align: center;"></h2>
+			
+			{{ block "main" . }}
+			{{ .Content }}
+			{{ end }}
+		</article>
+	</div>
+	<div class="cover-all">
+		<img id="bezel" src="/CRT/bezel.png" alt="">
+	</div>
+	<div class="cover-all">
+		<img id="sl" src="/CRT/scanlines.png" alt="">
+	</div>
+	<div class="cover-all">
+		<img id="sl2" src="/CRT/scanlines.png" alt="">
+	</div>
 </main>
 {{ block "footer" . }}
 <footer>

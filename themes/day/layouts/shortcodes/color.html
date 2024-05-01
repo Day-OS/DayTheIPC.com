@@ -1,0 +1,14 @@
+<span 
+style="
+  {{with .Get "bgcolor"}}
+    background-color: {{.}};
+  {{else}}
+  {{end}}
+  {{with .Get "color"}}
+    color: {{.}};
+  {{else}}
+    color: white;
+  {{end}}"
+
+class="no-button" {{with .Get "href"}} href="{{.}}" {{end}}>
+{{.InnerDeindent}}</span>

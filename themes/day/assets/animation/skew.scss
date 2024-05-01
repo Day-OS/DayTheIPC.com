@@ -1,0 +1,15 @@
+@keyframes skew {
+    0% {
+      transform:  skewX(0.5deg) skewY(0.1deg);
+    }
+  
+  
+    50% {
+      transform: skewX(-0.5deg) skewY(-0.05deg);
+    }
+
+  
+    100% {
+      transform: skewX(0.5deg) skewY(0.1deg);
+    }
+}

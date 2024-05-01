@@ -1,0 +1,268 @@
+
+$enable-grid-classes: false;
+$enable-cssgrid: true;
+
+$media-small: "screen and (max-width : 900px)";
+
+@import "footer";
+@import "variables";
+@import "submodules/bootstrap/scss/variables-dark";
+@import "submodules/bootstrap/scss/maps";
+@import "submodules/bootstrap/scss/mixins";
+@import "submodules/bootstrap/scss/utilities";
+@import "submodules/bootstrap/scss/root";
+@import "submodules/bootstrap/scss/reboot";
+//@import "submodules/bootstrap/scss/type";
+//@import "submodules/bootstrap/scss/images";
+//@import "submodules/bootstrap/scss/containers";
+//@import "submodules/bootstrap/scss/grid";
+//@import "submodules/bootstrap/scss/tables";
+//@import "submodules/bootstrap/scss/forms";
+//@import "submodules/bootstrap/scss/buttons";
+//@import "submodules/bootstrap/scss/transitions";
+//@import "submodules/bootstrap/scss/dropdown";
+//@import "submodules/bootstrap/scss/button-group";
+//@import "submodules/bootstrap/scss/nav";
+//@import "submodules/bootstrap/scss/navbar";
+//@import "submodules/bootstrap/scss/card";
+//@import "submodules/bootstrap/scss/accordion";
+//@import "submodules/bootstrap/scss/breadcrumb";
+//@import "submodules/bootstrap/scss/pagination";
+//@import "submodules/bootstrap/scss/badge";
+@import "submodules/bootstrap/scss/alert";
+//@import "submodules/bootstrap/scss/progress";
+//@import "submodules/bootstrap/scss/list-group";
+//@import "submodules/bootstrap/scss/close";
+//@import "submodules/bootstrap/scss/toasts";
+//@import "submodules/bootstrap/scss/modal";
+//@import "submodules/bootstrap/scss/tooltip";
+//@import "submodules/bootstrap/scss/popover";
+//@import "submodules/bootstrap/scss/carousel";
+//@import "submodules/bootstrap/scss/spinners";
+//@import "submodules/bootstrap/scss/offcanvas";
+//@import "submodules/bootstrap/scss/placeholders";
+//@import "submodules/bootstrap/scss/helpers";
+//@import "submodules/bootstrap/scss/utilities/api";
+
+$primary: rgb(29, 29, 35);
+$asdsad: #bd65f8;
+$contrast: $asdsad;
+$primary-shadow: rgb(255, 0, 162);
+$secondary-shadow: blue;
+
+
+@import 'animation/scanning.scss';
+@import 'animation/blink.scss';
+@import 'animation/skew.scss';
+@import 'animation/flicker.scss';
+
+#bezel{
+    @media #{$media-small} {
+        content: url("/CRT/bezel-mobile.png");
+    }
+}
+
+#sl{
+opacity: 50%;
+z-index: 100;
+}
+#sl2{
+    animation-name: scanning; 
+    animation-timing-function: linear; 
+    animation-iteration-count: infinite; 
+    animation-duration: 4s; 
+    opacity: 20%;
+    z-index: 100;
+}
+
+@import 'fonts/DOS';
+.dos {
+    font-family: "DOS";
+}
+
+@import 'fonts/Silkscreen';
+.silkscreen-regular {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.no-button{
+    
+    div{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items:center;
+        justify-content: center;
+    }
+    img{
+        margin: 5px;
+        width: 16px;
+        height: 16px;
+    }
+    @extend .silkscreen-regular
+}
+.webring a{
+    text-decoration: none;
+}
+
+footer{
+    margin-top: 0;
+}
+
+html,body{
+    color: $contrast;
+    background:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/CRT/wallpapah.png");
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    height: 100%;
+    main {
+        color: $contrast;
+        text-align: justify;
+        word-break: break-word;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        .cover-all{    
+            pointer-events:none;
+            position: absolute;
+            width: 100%;
+            top:0;
+            bottom: 0;
+            *{
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .content{
+            animation: skew 6s infinite;
+            *{
+                text-shadow: 0.5px 0.5px 2px $primary-shadow, -0.5px -0.5px 2px $secondary-shadow;
+                //Removed for being nausiating and possibly causing seizures
+                //animation: textflicker 0.1s infinite;
+                @extend .dos;
+            }
+            
+            padding: 5%;
+            height: 100%;
+
+            @media #{$media-small} {
+                padding: 10% 5%;
+
+                
+            }
+            article{
+                height: 100%;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                scrollbar-color: $contrast rgba(255, 255, 255, 0);
+                scrollbar-width: thin;
+                scrollbar-arrow-color: black;
+               /* width */
+                -webkit-scrollbar {
+                width: 10px;
+                }
+                
+                /* Track */
+                -webkit-scrollbar-track {
+                background: $contrast; 
+                }
+                
+                /* Handle */
+                -webkit-scrollbar-thumb {
+                background: #888; 
+                }
+                
+                /* Handle on hover */
+                -webkit-scrollbar-thumb:hover {
+                background: #555; 
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+header{
+    display: flex;
+    h1{
+        padding: 0 20px;
+        display: inline-block;
+        margin: 0 auto; 
+        font-size: 130%;
+        color:$primary;
+        text-align: center;
+        background-color: $contrast;
+    }
+}
+.blink::after{
+content:"|";
+animation: blink .75s step-end infinite; 
+}
+
+.list-main{    
+    display: flex;
+    flex-direction: row;
+    @media #{$media-small} {
+        flex-direction: column-reverse;
+    }
+    > div{
+
+        animation: right-box-flicker 1s infinite;
+        margin: 10px;
+        padding-left: 10px;
+        flex: 1;
+        &:first-of-type{
+            margin-right: 0;
+            padding-right: 10px;
+            border-right: $contrast 8px solid;
+
+            @media #{$media-small} {
+                border-right: 0;
+
+                
+            }
+        }
+        &:last-of-type{
+            @media #{$media-small} {
+                padding-bottom: 10px;
+                border-bottom: $contrast 8px solid;
+            }
+        }
+    }
+    .page-list{
+        list-style: none;
+        li{
+            margin-right: 8px;
+            padding: 3px 8px;
+            a{
+                font-size: larger;
+                display: inline-block;
+                height: 100%;
+                width: 100%;
+                color: $contrast;
+                
+            }
+            &:hover{
+                background-color: $contrast;
+                a{
+                    color: $primary;
+                    text-decoration: none;
+                    &::after{
+                        content:"<";
+                        animation: blink .75s step-end infinite; 
+                    }
+                    &::before{
+                        content:">";
+                        animation: blink .75s step-end infinite; 
+                    }
+                }
+            }
+        }
+    }
+}

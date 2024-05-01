@@ -1,0 +1,13 @@
+@keyframes scanning { 
+    from{ 
+        -webkit-transform: scaleY(40px);
+        -webkit-transform: translateY(-100%); 
+        opacity: 20%;
+    } 
+    to {    
+        opacity: 0;
+        -webkit-transform: scaleY(1px);
+        -webkit-transform: translateY(0%); 
+    } 
+} 
+    

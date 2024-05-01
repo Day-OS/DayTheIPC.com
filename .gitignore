@@ -1,8 +1,13 @@
 # Generated files by hugo
 /public/
 /resources/_gen/
-/content/
+/content/*
+!/content/nerd-stuff/
 !/content/nerd-stuff/comparisons/
+!/content/dori-1/
+
+
+
 /assets/jsconfig.json
 hugo_stats.json
 

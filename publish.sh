@@ -1,3 +1,3 @@
 hugo --gc --minify
 
-rclone sync --interactive . daytheipc:/dani/daytheipc/
+rclone sync . daytheipc:/dani/daytheipc/

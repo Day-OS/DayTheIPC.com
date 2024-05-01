@@ -4,7 +4,14 @@
 {{ define "main" -}}
 {{ .Content }}
 <ul>
-{{- range.Pages }}
+
+{{ $pages := .Pages }}
+{{ range .Translations }}
+	{{ $pages = $pages | lang.Merge .Pages }}
+{{ end }}
+
+
+{{- range $pages }}
 <li>
 	{{- if .Param "datesinlist" }}<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006 Jan 02" }}</time> &ndash; {{ end -}}
 	<a href="{{ .RelPermalink }}">{{ .Title }}</a>

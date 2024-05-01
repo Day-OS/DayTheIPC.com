@@ -1,0 +1,8 @@
+@keyframes textflicker {
+    from {
+        text-shadow: 0px 0 0 #ea36c9, 0 0 0 #6994fa;
+    }
+    to {
+        text-shadow: 0.5px 0.5px 1px #ea36c9, -0.5px -0.5px 1px #6994fa;
+    }
+}

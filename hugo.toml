@@ -2,10 +2,46 @@ baseURL = 'https://moon.daytheipc.com/'
 languageCode = 'en-us'
 title = "Daniela's Hideout"
 theme = 'day'
+defaultContentLanguage = 'en'
+
+enableMissingTranslationPlaceholders = true
+
+
+[params]
+onionBaseURL = 'http://dayos4s5ipb5iorxo7nx2yfch4obxlxyg26wsoxp3ungezgfwlzr2oyd.onion/'
+
+
+
+
+[module]
+    [[module.mounts]]
+    excludeFiles = ['/photos/*']
+    source = 'content'
+    target = 'content'
+
+
+
+
+
+[languages]
+    [languages.en]
+        disabled = false
+        languageCode = 'en-US'
+        languageDirection = 'ltr'
+        languageName = 'English'
+        weight = 1
+    [languages.pt-br]
+        disabled = false
+        languageCode = 'pt-BR'
+        languageDirection = 'ltr'
+        languageName = 'Português'
+        weight = 2
+
+
+
+
 
 [markup]
 [markup.goldmark]
 [markup.goldmark.renderer]
 unsafe = true
-[params]
-onionBaseURL = 'http://dayos4s5ipb5iorxo7nx2yfch4obxlxyg26wsoxp3ungezgfwlzr2oyd.onion/'
