@@ -40,7 +40,16 @@
             }
         }
         ready(()=>{
-            let confirmation = confirm("⚠️ Esse conteúdo pode ser ofensivo e remete a vários assuntos sensíveis como: suicídio, depressão e pessoas mantidas em cativeiro. \n\nPor favor, certifique-se que você não irá se sentir mal por conta de tais assuntos. \n\n Caso esteja passando por uma fase complicada e esteja tendo pensamentos ruins, não se esqueça de falar com pessoas próximas ou discar para o 188. <3")
+            let text = 
+            `
+⚠️ ESSE SITE PODE SER SENSÍVEL A PESSOAS COM EPILEPSIA!
+
+⚠️ Esse conteúdo pode ser ofensivo e remete a vários assuntos sensíveis como: suicídio, depressão e pessoas mantidas em cativeiro. 
+            
+Por favor, certifique-se que você não irá se sentir mal por conta de tais assuntos.
+            
+Caso esteja passando por uma fase complicada e esteja tendo pensamentos ruins, não se esqueça de falar com pessoas próximas ou discar para o 188. <3`;
+            let confirmation = confirm(text)
             if (!confirmation) {
                 location.href = "/"
             }
