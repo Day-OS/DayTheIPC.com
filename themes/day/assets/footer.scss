@@ -1,6 +1,11 @@
 @import "variables";
 @import "fonts/Silkscreen";
 
+
+
+$media-small: "screen and (max-width : 768px)";
+
+
 html,body{
     height: 100%;
 }
@@ -29,39 +34,81 @@ footer{
     margin-top: 20px;
     padding: 10px 20px;
     background-color: rgb(19, 19, 19);
+    
     .extra{
         text-align: center;
         font-family: "Silkscreen";
         color: white;
+        details{
+            summary{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+            table{
+                width: 80%;
+                margin: 0 10%;
+                tbody{
+                    tr{
+                        border: 2px solid $secondary;
+                        margin-bottom: 2px;
+                        border-radius: 10px;
+                        display: flex;
+                        flex-direction: row;
+                        td{
+                            flex: 1;
+                        }
+                    }
+                    a{
+                        color: white;
+                    }
+                }
+            }
+        }
     }
     .buttons{
         display: flex;
         justify-content: space-between;
-    }
-    .left{
-        flex: 1;
-        margin: auto;
-        height: 40px; 
-        padding-left: 10px;
-        border-right: 28px solid transparent;
-        border-bottom: 30px solid $secondary;
-    }
-    .middle{
-        display: flex;
-        justify-content: center;
-        flex: 1;
-    }
-    .right{
+        align-items: flex-end;
+
+        .left{
+            padding-left: 10px;
+            border-right: 28px solid transparent;
+            border-bottom: 30px solid $secondary;
+        }
+        .middle{
+            justify-content: center;
+        }
+        .right{
+            justify-content: end;
+            padding-right: 10px;
+            border-left: 28px solid transparent;
+            border-bottom: 30px solid $secondary;
+        }
+        .left, .middle, .right{
+
+            align-items: end;
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+            height: 100%;
+
+            a, img {
+                max-width: 100%;
+                height: auto;
+                @media #{$media-small} {
+                    height: auto;
+                }
+            }
+        }
+        .left, .right{
+            *{
+                position: relative;
+                bottom: -10px;
+            }
+        }
+
         
-        height: 40px; 
-        padding-right: 10px;
-        border-left: 28px solid transparent;
-        border-bottom: 30px solid $secondary;
-        align-items: start;
-        
-        display: flex;
-        justify-content: end;
-        flex: 1;
     }
+    
 
 }

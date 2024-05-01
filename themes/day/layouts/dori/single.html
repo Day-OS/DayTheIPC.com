@@ -1,0 +1,92 @@
+
+
+{{ define "head" }}
+    <meta property="og:image" content="{{.Params.image_display}}" />
+    <meta name="theme-color" content="#FF0000">
+
+    <!-- Include this to make the og:image larger -->
+    <meta name="twitter:card" content="summary_large_image">
+    {{ if .Params.bg_image }}
+        <style>
+            :root{
+                --background-image: url({{ .Params.bg_image }});
+            }
+        </style>
+    {{ end }}
+    {{ if .Params.primary_color }}
+        <style>
+            :root{
+                --main: {{ .Params.primary_color }};
+            }
+        </style>
+    {{ end }}
+    {{ if .Params.secondary_color }}
+        <style>
+            :root{
+                --secondary: {{ .Params.secondary_color }};
+            }
+        </style>
+    {{ end }}
+    {{ if .Params.bg_repeat }}
+        <style>
+            :root{
+                --bg_repeat: {{ .Params.bg_repeat }};
+            }
+        </style>
+    {{ end }}
+    {{ if .Params.bg_size }}
+        <style>
+            :root{
+                --bg_size: {{ .Params.bg_size }};
+            }
+        </style>
+    {{ end }}
+    {{ if .Params.bg_transparency }}
+        <style>
+            :root{
+                --bg_transparency: {{ .Params.bg_transparency }};
+            }
+        </style>
+    {{ end }}
+    
+{{- end }}
+
+
+
+{{ define "title" -}}
+    {{ .Title }}
+    <br>
+    <h2>{{ .Params.SubTitle }}</h2>
+{{- end }}
+
+{{ define "main" -}}
+    {{- $sectionDelimiter := "<!-- break -->" -}}
+    {{- $rawContentSections := split .RawContent $sectionDelimiter -}}
+    <div class="separator">
+        {{- if gt (len $rawContentSections) 1 -}}
+            <div>
+            {{ index $rawContentSections 0 | .RenderString }}
+            </div>
+            <div>
+            {{ index $rawContentSections 1 | .RenderString }}
+            </div>
+        {{- else -}}
+            <div id="content-not-split-into-sections">
+            {{ .Content }}
+            </div>
+        {{- end -}}
+    </div>
+    <!-- POR ALGUM MOTIVO O PREV E NEXT ESTÃO INVERTIDOS?? -->
+    {{ if .Next }}
+	    <a href="{{ .Next.Permalink }}">« ANTERIOR</a>
+	{{ end }}
+    {{ if .Prev }}
+	<a href="{{ .Prev.Permalink }}">PROXIMO »</a>
+	{{ end }}
+    
+    
+
+
+
+
+{{ end }}

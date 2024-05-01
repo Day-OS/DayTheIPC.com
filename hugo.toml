@@ -1,4 +1,4 @@
-baseURL = 'https://moon.daytheipc.com/'
+baseURL = 'https://daytheipc.com/'
 languageCode = 'en-us'
 title = "Daniela's Hideout"
 theme = 'day'

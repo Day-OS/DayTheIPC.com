@@ -4,3 +4,6 @@
 [submodule "bootstrap-icons"]
 	path = themes/day/assets/submodules/bootstrap-icons
 	url = https://github.com/twbs/icons
+[submodule "themes/day/assets/submodules/csshake"]
+	path = themes/day/assets/submodules/csshake
+	url = https://github.com/elrumordelaluz/csshake.git

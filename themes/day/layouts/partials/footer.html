@@ -10,7 +10,12 @@
                     {{range .}}
                     <tr>
                         <td>
-                            <a href="{{.site}}">{{.name}}</a>
+                            {{if ne .site "" }}
+                                <a href="{{.site}}">{{.name}}</a>
+
+                            {{else}}
+                                <a>{{.name}}</a>
+                            {{end}}
                         </td>
                         <td>
                             {{.contribution}}

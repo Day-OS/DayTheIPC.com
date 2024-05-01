@@ -1,0 +1,75 @@
+{{ define "title" -}}
+	<img src="/dori/Nanotrasen_Logo.png" width="60rem" alt="">
+	Relatórios relacionados a pesquisa "{{ .Title | title }}":
+{{- end }}
+
+{{ define "head" }}
+    <meta property="og:image" content="{{.Params.image_display}}" />
+    <meta name="theme-color" content="#FF0000">
+
+    <!-- Include this to make the og:image larger -->
+    <meta name="twitter:card" content="summary_large_image">
+    {{ if .Params.bg_image }}
+        <style>
+            :root{
+                --background-image: url({{ .Params.bg_image }});
+            }
+        </style>
+    {{ end }}
+    {{ if .Params.primary_color }}
+        <style>
+            :root{
+                --main: {{ .Params.primary_color }};
+            }
+        </style>
+    {{ end }}
+    {{ if .Params.secondary_color }}
+        <style>
+            :root{
+                --secondary: {{ .Params.secondary_color }};
+            }
+        </style>
+    {{ end }}
+
+    <script>
+        function ready(fn) {
+            if (document.readyState !== 'loading') {
+              fn();
+            } else {
+              document.addEventListener('DOMContentLoaded', fn);
+            }
+        }
+        ready(()=>{
+            let confirmation = confirm("⚠️ Esse conteúdo pode ser ofensivo e remete a vários assuntos sensíveis como: suicídio, depressão e pessoas mantidas em cativeiro. \n\nPor favor, certifique-se que você não irá se sentir mal por conta de tais assuntos. \n\n Caso esteja passando por uma fase complicada e esteja tendo pensamentos ruins, não se esqueça de falar com pessoas próximas ou discar para o 188. <3")
+            if (!confirmation) {
+                location.href = "/"
+            }
+        })
+          
+        
+    </script>
+    
+{{- end }}
+
+{{ define "main" -}}
+
+{{ $pages := .Pages }}
+{{ range .Translations }}
+	{{ $pages = $pages | lang.Merge .Pages }}
+{{ end }}
+
+
+{{- range (where $pages ".Params.unlisted" "!=" "true") }}
+<li>
+	<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    &ndash;
+	{{- if .Param "datesinlist" }} <time datetime="{{ .Params.story_date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Params.story_date.Format "02/01/2006 15:04" }}</time>  {{ end -}}
+</li>
+{{- end }}
+</ul>
+
+<a class="jaba" href="https://estacaopirata.com/">
+    Powered by 
+    <img src="/dori/EstacaoPirata_Icone_v2.png" alt="">
+</a>
+{{- end }}
