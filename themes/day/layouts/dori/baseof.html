@@ -24,21 +24,51 @@
 <body>
 {{ if .Site.Menus.main }}{{ partial "nav.html" . }}{{ end -}}
 <main>
+	<div class="screen">
+		<header>
+			<h1 id="tag_{{ .Title }}">
+				{{ block "title" . }}
+					asd
+				{{ end }}
+			</h1>
+		</header>
+		<article>
+		{{ block "main" . }}
 	
-	<header>
-		<h1 id="tag_{{ .Title }}">
-			{{ block "title" . }}
-				asd
-			{{ end }}
-		</h1>
-	</header>
-	<article>
-	{{ block "main" . }}
+		{{ end }}
+		{{ if .Param "nextprev" }}{{ partial "nextprev.html" . -}}{{ end -}}
+		{{ if .Param "taglist" }}{{ partial "taglist.html" . }}{{ end -}}
+		</article>
+	</div>
 
-	{{ end }}
-	{{ if .Param "nextprev" }}{{ partial "nextprev.html" . -}}{{ end -}}
-	{{ if .Param "taglist" }}{{ partial "taglist.html" . }}{{ end -}}
-	</article>
+    <!-- POR ALGUM MOTIVO O PREV E NEXT ESTÃO INVERTIDOS?? -->
+	<div class="buttons">
+
+		<div class="brand">
+			<h1>P-TECH<sup>©</sup></h1>
+			Personal Digital Assistant 8000
+		</div>
+
+		<div class="nextprev">
+			<div>
+				{{ if .Prev }}
+					<a href="{{ .Prev.Permalink }}">»</a>
+				{{else}}
+					<a>»</a>
+				{{ end }}
+			</div>
+			<div>
+				{{ if .Next }}
+					<a href="{{ .Next.Permalink }}">«</a>
+				{{else}}
+					<a>«</a>
+				{{ end }}
+	
+			</div>
+		</div>
+	</div>
+	
+
 </main>
 {{ block "footer" . }}
 <footer>
