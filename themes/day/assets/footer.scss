@@ -43,6 +43,9 @@ footer{
             summary{
                 cursor: pointer;
                 text-decoration: underline;
+                &:hover{
+                    color: gray;
+                }
             }
             table{
                 width: 80%;
