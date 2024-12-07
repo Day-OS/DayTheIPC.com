@@ -1,14 +1,7 @@
 # Generated files by hugo
 /public/
 /resources/_gen/
-/content/*
-!/content/nerd-stuff/
-!/content/nerd-stuff/comparisons/
-!/content/dori/
-!/content/cool-websites
-!_index.md
-!_index.pt-br.md
-
+content/photos/
 
 /assets/jsconfig.json
 hugo_stats.json

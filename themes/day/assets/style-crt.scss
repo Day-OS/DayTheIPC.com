@@ -97,31 +97,36 @@ footer{
 
 html,body{
     color: $contrast;
-    background:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/CRT/wallpapah.png");
+    
     background-size: cover;
     background-position: center center; 
     background-repeat: no-repeat;
     height: 100%;
+    .cover-all{    
+        z-index: 9;
+        pointer-events:none;
+        position: absolute;
+        width: 100%;
+        top:0;
+        bottom: 0;
+        *{
+            height: 100%;
+            width: 100%;
+        }
+    }
     main {
+        background:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/CRT/wallpapah.png");
+        background-size: cover;
+
+        animation: skew 6s infinite;
         color: $contrast;
         text-align: justify;
         word-break: break-word;
         height: 100%;
         position: relative;
         overflow: hidden;
-        .cover-all{    
-            pointer-events:none;
-            position: absolute;
-            width: 100%;
-            top:0;
-            bottom: 0;
-            *{
-                height: 100%;
-                width: 100%;
-            }
-        }
+        
         .content{
-            animation: skew 6s infinite;
             *{
                 text-shadow: 0.5px 0.5px 2px $primary-shadow, -0.5px -0.5px 2px $secondary-shadow;
                 //Removed for being nausiating and possibly causing seizures
