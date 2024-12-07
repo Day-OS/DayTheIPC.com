@@ -1,0 +1,44 @@
+@use 'sass:math';
+
+$webring-default-width: 88px;
+$webring-default-height: 31px;
+$webring-size-multiplier:  1 !default;
+
+.no-button {
+    width: $webring-default-width * $webring-size-multiplier;
+    min-width:$webring-default-width * $webring-size-multiplier;
+    height: $webring-default-height * $webring-size-multiplier;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 9px  * $webring-size-multiplier;
+    background-color: black;
+    color: white;
+    border-width: 2px * $webring-size-multiplier;
+    border-style: solid;
+    border-color: white;
+    div{
+        margin: 2px * $webring-size-multiplier;
+        display: flex;
+        height: 90%;
+        width: 90%;
+        align-items:center;
+        justify-content: center;
+        img {
+            margin-right: 4px;
+        }
+    }
+}
+.no-button-logo{
+    width: 16px  * $webring-size-multiplier;
+    height: 16px  * $webring-size-multiplier;
+}
+.button{
+    width: $webring-default-width * $webring-size-multiplier;
+    height: $webring-default-height * $webring-size-multiplier;
+    display: inline-block;
+    img{
+        width: $webring-default-width * $webring-size-multiplier; 
+        height: $webring-default-height * $webring-size-multiplier;
+    }
+}

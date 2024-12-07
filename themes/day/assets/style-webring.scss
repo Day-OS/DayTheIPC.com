@@ -1,0 +1,13 @@
+$webring-size-multiplier: 2;
+@import "style-webring-buttons";
+
+
+.webring{
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax($webring-default-width * $webring-size-multiplier, 1fr));
+    > * {
+        display: inline-grid !important;
+    }
+}

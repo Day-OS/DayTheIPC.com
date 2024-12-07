@@ -4,8 +4,8 @@
 /content/*
 !/content/nerd-stuff/
 !/content/nerd-stuff/comparisons/
-!/content/dori-1/
-!/content/cool-websites.md
+/content/dori/
+!/content/cool-websites
 
 
 

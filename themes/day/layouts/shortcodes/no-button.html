@@ -1,53 +1,33 @@
 <a 
 style="
-  width: 88px;
-  min-width:88px;
-  height: 31px;
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-    
-
   {{with .Get "border-color"}}
     border-color: {{.}};
-  {{else}}
-    border-color: white;
   {{end}}
 
   {{with .Get "border-style"}}
     border-style: {{.}};
-  {{else}}
-    border-style: solid;
   {{end}}
 
   {{with .Get "border-width"}}
     border-width: {{.}};
-  {{else}}
-    border-width: 2px;
   {{end}}
 
   {{with .Get "color"}}
     color: {{.}};
-  {{else}}
-    color: white;
   {{end}}
 
   {{with .Get "background-color"}}
     background-color: {{.}};
-  {{else}}
-    background-color: black;
   {{end}}
 
   {{with .Get "font-size"}}
     font-size: {{.}};
-  {{else}}
-    font-size: 7px;
   {{end}}"
 
 class="no-button" {{with .Get "href"}} href="{{.}}" {{end}}>
     <div>
         {{with .Get "src"}}
-        <img width="16px" src="{{.}}">
+        <img class="no-button-logo" src="{{.}}">
         {{end}}
         {{.Get "text"}}
         {{.InnerDeindent}}
