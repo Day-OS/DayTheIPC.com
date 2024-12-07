@@ -39,12 +39,12 @@
 				{{ end }}
 			</article>
 		</div>
-		
+		{{ block "footer" . }}
+		<footer>
+			{{ partial "footer.html" (dict "Page" . "Site" .Site) }}
+		</footer>
+		{{ end }}
 	</main>
-	{{ block "footer" . }}
-	<footer>
-		{{ partial "footer.html" (dict "Page" . "Site" .Site) }}
-	</footer>
-	{{ end }}
+	
 </body>
 </html>

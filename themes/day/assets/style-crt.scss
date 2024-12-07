@@ -124,7 +124,17 @@ html,body{
         word-break: break-word;
         height: 100%;
         position: relative;
-        overflow: hidden;
+        overflow: scroll;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        footer{
+            padding-bottom: 5%;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
         
         .content{
             *{
@@ -135,8 +145,6 @@ html,body{
             }
             
             padding: 5%;
-            height: 100%;
-
             @media #{$media-small} {
                 padding: 10% 5%;
 
