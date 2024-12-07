@@ -4,9 +4,10 @@
 /content/*
 !/content/nerd-stuff/
 !/content/nerd-stuff/comparisons/
-/content/dori/
+!/content/dori/
 !/content/cool-websites
-
+!_index.md
+!_index.pt-br.md
 
 
 /assets/jsconfig.json
