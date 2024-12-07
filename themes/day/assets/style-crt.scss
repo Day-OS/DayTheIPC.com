@@ -205,6 +205,15 @@ content:"|";
 animation: blink .75s step-end infinite; 
 }
 
+.division{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    @media #{$media-small} {
+        flex-direction: column-reverse;
+    }
+}
+
 .list-main{    
     display: flex;
     flex-direction: row;
