@@ -1,6 +1,7 @@
 @import "variables";
 @import "fonts/Silkscreen";
-
+@import "variables";
+@import "bright-hover-mixin";
 
 
 $media-small: "screen and (max-width : 768px)";
@@ -24,7 +25,7 @@ body{
 .back-button{
     background-color: $gray-900;
     border: 2px solid $secondary;
-    padding: 2px;
+    padding: 2px;    
 }
 
 footer{
@@ -69,10 +70,11 @@ footer{
         }
     }
     .buttons{
+        
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-
+        
         .left{
             padding-left: 10px;
             border-right: 28px solid transparent;
@@ -95,6 +97,10 @@ footer{
             flex-wrap: wrap;
             height: 100%;
 
+            img{
+                @include bright-hover($purple);
+
+            }
             a, img {
                 max-width: 100%;
                 height: auto;

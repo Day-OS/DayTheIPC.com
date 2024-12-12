@@ -1,0 +1,27 @@
+@mixin bright-hover($color, $duration: 0.5s) {
+    @keyframes bright-increase {
+        from {
+            box-shadow: 0 0 0 $color;
+        }
+        to {
+            box-shadow: 0 0 20px $color;
+        }
+    }
+
+    @keyframes bright-decrease {
+        from {
+            box-shadow: 0 0 20px $color;
+        }
+        to {
+            box-shadow: 0 0 0 $color;
+        }
+    }
+
+    &:hover {
+        animation: bright-increase $duration forwards;
+    }
+
+    &:not(:hover) {
+        animation: bright-decrease $duration forwards;
+    }
+}
