@@ -1,11 +1,11 @@
 +++
 Title = "Cool Websites1!1"
 Layout = "single"
+Date = "2024-12-11"
 +++
 
-I don't have a webwring image yet so... yeah :/
 
-Checkout these websites :D
+# Checkout these websites :D
 
 <div class="webring">
     {{<no-button href="https://cyber.dabamos.de" src="https://cyber.dabamos.de/images/favicon.ico" text="The Cyber Vanguard" color="#993366" border-color="#e6e6e6" background-color="#262626"/>}}
@@ -19,3 +19,9 @@ Checkout these websites :D
     {{<no-button href="https://cat-milk.github.io/Anime-Girls-Holding-Programming-Books/" src="Nene_Sakura_Rust.png" text="AGHPB" font-size="14px" border-width="2px" border-color="#FFFFFF"/>}}
     {{<no-button href="https://grugbrain.dev/" src="grug.png" text="grugbrain" border-width="2px" border-color="#FFFFFF"/>}}
 </div>
+
+---
+
+# If you want to add me into your webring:
+
+{{<button href="/." src="/webring.png" alt="daytheipc webring" >}}
