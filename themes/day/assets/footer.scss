@@ -81,6 +81,26 @@ footer{
             border-bottom: 30px solid $secondary;
         }
         .middle{
+            display: flex;
+            flex-direction: column;
+            .license, .lang-button, abbr{
+                width: 100%;
+                text-align: center;
+            }
+            .lang-button{
+                a{
+                    @include bright-hover($purple);
+                    background-color: white;
+                    padding: 5px;
+                    border-radius: 2px;
+                    text-decoration: none;
+                    font-family: "Silkscreen";
+                    color: $purple;
+                    
+                }
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
             justify-content: center;
         }
         .right{

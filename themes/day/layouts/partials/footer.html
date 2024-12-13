@@ -33,13 +33,25 @@
         {{end}}
     </div>
     <div class="middle">
+        <div class="lang-button" >
+            {{ $pageLang := .Page.Lang}}
+            {{ with .Page.AllTranslations }}
+                {{ range . }}
+                    {{ if ne .Lang $pageLang }}
+                            <a href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}">{{ .LinkTitle }} ({{ or .Language.LanguageName .Language.Lang }})</a>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+
+        </div>
         {{if eq .license "WTFPL"}}
-        <a href="http://www.wtfpl.net/">
+        <a class="license" href="http://www.wtfpl.net/">
             <img src="/wtfpl-badge-1.png" width="88" height="31" alt="WTFPL"/></img>
         </a>
         {{else}}
         <abbr title="This work by Daniela Paladino is licensed under CC BY 4.0">
-            <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
+            <a class="license" href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
                 <img width="88px" height="31px" src="/by.png" alt="">
             </a>
         </abbr>
