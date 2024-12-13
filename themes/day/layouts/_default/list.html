@@ -9,7 +9,7 @@
 			{{ range .Translations }}
 				{{ $pages = $pages | lang.Merge .Pages }}
 			{{ end }}
-			{{- range (where $pages ".Params.unlisted" "!=" "true") }}
+			{{- range (where $pages ".Params.unlisted" "!=" true) }}
 				<li>
 					<a href="{{ .RelPermalink }}">
 						{{ .Title }}
