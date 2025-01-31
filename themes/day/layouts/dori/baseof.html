@@ -18,7 +18,7 @@
 
 
 	{{ $sass := resources.Get "style-dori.scss" }}
-	{{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
+	{{ $style := $sass | css.Sass | resources.Fingerprint }}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 </head>
 <body>

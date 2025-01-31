@@ -6,7 +6,7 @@
 	<link rel="canonical" href="{{ .Site.BaseURL }}">
 	<link rel='alternate' type='application/rss+xml' title="{{ .Site.Title }} RSS" href='/index.xml'>
 	{{ $sass := resources.Get "style-crt.scss" }}
-	{{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
+	{{ $style := $sass | css.Sass | resources.Fingerprint }}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 	<meta name="twitter:image" content="/logo.png">
 	<meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}">

@@ -6,7 +6,7 @@
 	<link rel='alternate' type='application/rss+xml' title="{{ .Site.Title }} RSS" href='/index.xml'>
 
 	{{ $sass := resources.Get "style-photos.scss" }}
-	{{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
+	{{ $style := $sass | css.Sass | resources.Fingerprint }}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 	{{ with .Site.Params.favicon }}<link rel="icon" href="{{ . }}">
 	{{ end -}}
