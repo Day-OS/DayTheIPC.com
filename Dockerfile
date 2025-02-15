@@ -20,7 +20,7 @@ WORKDIR /src
 
 # Replace below build command at will.
 
-RUN hugo --minify --enableGitInfo
+RUN hugo --minify
 
 # Set the fallback 404 page if defaultContentLanguageInSubdir is enabled,
 
@@ -35,7 +35,8 @@ RUN hugo --minify --enableGitInfo
 
 #####################################################################
 
-FROM hugomods/hugo:nginx
+FROM nginx:1.27.4
+COPY conf.d/default.conf /etc/nginx/conf.d/default.conf
 
 # Copy the generated files to keep the image as small as possible.
 

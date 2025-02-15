@@ -19,6 +19,7 @@ Date = "2024-12-11"
     {{<no-button href="https://cat-milk.github.io/Anime-Girls-Holding-Programming-Books/" src="Nene_Sakura_Rust.png" text="AGHPB" font-size="14px" border-color="#FFFFFF"/>}}
     {{<no-button href="https://grugbrain.dev/" src="grug.png" text="grugbrain" border-color="#FFFFFF"/>}}
     {{<no-button href="https://gohorse.com.br/extreme-go-horse-xgh.html" src="horse21.png" text="GO HORSE PROCESS" border-color="#FFFFFF"/>}}
+    {{<no-button href="https://lainzine.org/archive" src="lainzine.ico" text="LainZine"/>}}
 </div>
 
 ---
