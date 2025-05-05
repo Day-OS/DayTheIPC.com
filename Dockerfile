@@ -19,7 +19,7 @@ COPY . /src
 WORKDIR /src
 
 # Replace below build command at will.
-
+RUN git submodule update --init --recursive
 RUN hugo --minify
 
 # Set the fallback 404 page if defaultContentLanguageInSubdir is enabled,

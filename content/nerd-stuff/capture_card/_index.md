@@ -1,5 +1,9 @@
 +++
 Title = "My capture Card Setup"
+Date = "2025-04-16"
+authors = [
+    {name = "Daniela (DayOS)",contribution= "Author",site = "https://github.com/Day-OS"}
+]
 +++
 
 Currently I'm using a capture card to record my xbox 360 to share with my friends.

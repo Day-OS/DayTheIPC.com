@@ -1,5 +1,8 @@
 +++
 Title = "DAYOS"
+authors = [
+    {name = "Daniela (DayOS)",contribution= "Author",site = "https://github.com/Day-OS"}
+]
 +++
 
 # Welcome to my humble hideaway!

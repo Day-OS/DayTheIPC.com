@@ -3,7 +3,7 @@ Title = "Search Engine Comparison"
 Date = "2024-02-01"
 authors = [
     {name = "HNHX", contribution = "Original Author", site ="https://github.com/hnhx/"},
-    {name = "Daniela (DayOS)",contribution= "Current Host, Small edits",site = "https://github.com/Day-OS"}
+    {name = "Daniela (Small edits)",contribution= "Current Host, Small edits",site = "https://github.com/Day-OS"}
 ]
 +++
 ![Big brother is watching](/nb-bbbut.gif)

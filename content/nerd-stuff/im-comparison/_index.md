@@ -3,7 +3,7 @@ Title = "Instant messaging services Comparison"
 Date = "2024-01-27"
 authors = [
     {name = "HNHX", contribution = "Original Author", site ="https://github.com/hnhx/"},
-    {name = "Daniela (DayOS)",contribution= "Current Host, Small edits",site = "https://github.com/Day-OS"}
+    {name = "Daniela (Small edits)",contribution= "Current Host, Small edits",site = "https://github.com/Day-OS"}
 ]
 +++
 ![Big brother is watching](/nb-bbbut.gif)
