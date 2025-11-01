@@ -20,6 +20,7 @@ Date = "2024-12-11"
     {{<no-button href="https://grugbrain.dev/" src="grug.png" text="grugbrain" border-color="#FFFFFF"/>}}
     {{<no-button href="https://gohorse.com.br/extreme-go-horse-xgh.html" src="horse21.png" text="GO HORSE PROCESS" border-color="#FFFFFF"/>}}
     {{<no-button href="https://lainzine.org/archive" src="lainzine.ico" text="LainZine"/>}}
+    {{<no-button href="https://kasparyan.tec.br/" text="Kasparyan Technologies" border-color="#ffaa3c" color="#ffaa3c"/>}}
 </div>
 
 ---
