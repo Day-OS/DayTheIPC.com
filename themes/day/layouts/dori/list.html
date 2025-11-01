@@ -31,7 +31,7 @@
         </style>
     {{ end }}
 
-    <script>
+     <script>
         function ready(fn) {
             if (document.readyState !== 'loading') {
               fn();
@@ -39,28 +39,34 @@
               document.addEventListener('DOMContentLoaded', fn);
             }
         }
-        ready(()=>{
-            let text = 
-            `
-⚠️ ESSE SITE PODE SER SENSÍVEL A PESSOAS COM EPILEPSIA!
 
-⚠️ Esse conteúdo pode ser ofensivo e remete a vários assuntos sensíveis como: suicídio, depressão e pessoas mantidas em cativeiro. 
-            
-Por favor, certifique-se que você não irá se sentir mal por conta de tais assuntos.
-            
-Caso esteja passando por uma fase complicada e esteja tendo pensamentos ruins, não se esqueça de falar com pessoas próximas ou discar para o 188. <3`;
-            let confirmation = confirm(text)
-            if (!confirmation) {
-                location.href = "/"
+        ready(()=>{
+
+            const text = `⚠️ ESSE SITE PODE SER SENSÍVEL A PESSOAS COM EPILEPSIA!`;
+            try {
+                const confirmation = confirm(text);
+                if (confirmation === false) {
+                    location.href = "/";
+                }
+            } catch (e) {
             }
         })
-          
         
     </script>
+
     
 {{- end }}
 
 {{ define "main" -}}
+
+<div class="alert" role="alert">
+    <div><img src="/dori/16.png" alt=""></div>
+    <div>
+        <div><strong>Classificação indicativa</strong></div>
+        <div>Este conteúdo aborda temas sensíveis, incluindo suicídio, depressão e situações de cativeiro. Pode ser perturbador para algumas pessoas.</div>
+        <sub>Se você estiver em sofrimento emocional ou com pensamentos de autoextermínio, procure ajuda imediatamente — fale com alguém de confiança ou ligue para o número de apoio 188.</sub>
+    </div>
+</div>
 
 {{ $pages := .Pages }}
 {{ range .Translations }}

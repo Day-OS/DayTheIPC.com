@@ -7,6 +7,8 @@
 @import "submodules/csshake/scss/csshake.scss";
 
 
+
+
 $media-small: "screen and (max-width : 768px)";
 
 @keyframes textflicker {
@@ -274,4 +276,16 @@ article{
         float: right;
     }
     
+}
+.alert{
+    background-color: white;
+    color:#000;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    img{
+        width: 5em;
+        padding-right: 20px;
+    }
 }
